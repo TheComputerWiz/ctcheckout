@@ -32,24 +32,8 @@ const routes: Routes = [
     loadChildren: () => import('./transactions/transactions.module').then( m => m.TransactionsPageModule)
   },
   {
-    path: 'withdraw',
-    loadChildren: () => import('./withdraw/withdraw.module').then( m => m.WithdrawPageModule)
-  },
-  {
-    path: 'encryptedcard',
-    loadChildren: () => import('./encryptedcard/encryptedcard.module').then( m => m.EncryptedcardPageModule)
-  },
-  {
-    path: 'bankaccount',
-    loadChildren: () => import('./bankaccount/bankaccount.module').then( m => m.BankaccountPageModule)
-  },
-  {
-    path: 'uploadbankaccount',
-    loadChildren: () => import('./uploadbankaccount/uploadbankaccount.module').then( m => m.UploadbankaccountPageModule)
-  },
-  {
-    path: 'uploadcreditdebitcard',
-    loadChildren: () => import('./uploadcreditdebitcard/uploadcreditdebitcard.module').then( m => m.UploadcreditdebitcardPageModule)
+    path: 'payment-options',
+    loadChildren: () => import('./payment-options/payment-options.module').then( m => m.PaymentOptionsPageModule)
   },
   
   {path: 'login', loadChildren: './login/login.module#LoginPageModule'},

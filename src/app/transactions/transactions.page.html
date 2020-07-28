@@ -10,80 +10,9 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-item-divider>
-    <ion-label>
-      Current available balanace : $0.00
-    </ion-label>
-  </ion-item-divider>
+  <!--This button should be removed once the "pay" buttons are working properly-->
+  <ion-button href="/payment-options" style="background-color:#186cb6">Payment options page</ion-button>
 
-  <ion-item-divider color="secondary">
-    <ion-label>
-      Current balance : $0.00
-    </ion-label>
-  </ion-item-divider> -->
-  <ion-searchbar showCancelButton="always"></ion-searchbar>
-
-  <!-- <ion-item>
-    <ion-label position="stacked">From Date</ion-label>
-    <ion-datetime picker-format="dd/mm/yyyy"  [(ngModel)]="fromDate" placeholder="Select Date"></ion-datetime>
-  </ion-item>
-
-  <ion-item>
-    <ion-label position="stacked">To Date</ion-label>
-    <ion-datetime  picker-format="dd/mm/yyyy"  [(ngModel)]="toDate" placeholder="To Date"></ion-datetime>
-  </ion-item> -->
-
- <!--  <ion-item>
-    <ion-label>From Date:</ion-label>
-    <ion-input [(ngModel)]="fromDate"
-               placeholder="dd/mm/yyyy"
-               type="date"></ion-input>
-
-</ion-item>
-
-<ion-item>
-  <ion-label>To Date:  </ion-label>
-  <ion-input [(ngModel)]="toDate"
-             placeholder="dd/mm/yyyy"
-             type="date"></ion-input>
-
-</ion-item>
-
-
-      <ion-item>
-           <ion-label position="stacked">Please select your card*
-              <small class="error">*</small>
-          </ion-label> 
-          <ion-select  (ionChange)="selectedCard($event)"
-              placeholder="Please select card*" interface="action-sheet">
-              <ion-select-option *ngFor="let card of cards"
-                   [value]="card">{{card?.card_number}}
-              </ion-select-option>
-
-          </ion-select>
-      </ion-item>
-
-
-  <ion-item>
-    <ion-label>Status</ion-label>
-    <ion-select interface="action-sheet"  [(ngModel)]="paymentstatus" value="SUCCESS"  placeholder="Select Payment Status">
-      <ion-select-option value="SUCCESS">SUCCESS</ion-select-option>
-      <ion-select-option value="FAILED">FAILED</ion-select-option>
-      <ion-select-option value="SENT_FOR_REFUND">SENT FOR REFUND</ion-select-option>
-      <ion-select-option value="REFUNDED">REFUNDED</ion-select-option>
-      <ion-select-option value="PARTIALLY_REFUNDED">PARTIALLY REFUNDED</ion-select-option>
-      <ion-select-option value="AUTHORIZED">AUTHORIZED</ion-select-option>
-      <ion-select-option value="CANCELLED">CANCELLED</ion-select-option>
-      <ion-select-option value="EXPIRED">EXPIRED</ion-select-option>
-      <ion-select-option value="SETTLED">SETTLED</ion-select-option>
-      <ion-select-option value="CHARGED_BACK">CHARGED BACK</ion-select-option>
-      <ion-select-option value="INFORMATION_REQUESTED">INFORMATION REQUESTED</ion-select-option>
-      <ion-select-option value="INFORMATION_SUPPLIED">INFORMATION SUPPLIED</ion-select-option>
-     
-    </ion-select>
-  </ion-item> 
-
-  <ion-button (click)="getTrancation()" color="secondary" expand="full">Tranactions</ion-button> -->
 
   <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="pending">

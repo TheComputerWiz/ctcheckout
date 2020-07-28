@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="padding-top:10px;">Pay
+		<ion-icon name="add-circle-outline" style="font-size:30px; padding: 0px 20px 10px; float:right;">
+		</ion-icon>
+	</ion-title>
+	
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-item>
+    <ion-label>
+      $--.--
+    </ion-label>
+  </ion-item>
+  
+ <ion-item-divider>
+    <ion-label>Payment Options</ion-label>
+  </ion-item-divider>
+<ion-item button (click)="buttonClick()" detail>
+  <ion-label>
+    Visa - 4895 2810 0000 0006, Exp. 12/25
+  </ion-label>
+</ion-item> 
+
+<ion-item button (click)="buttonClick()" detail>
+  <ion-label>
+	MasterCard - 5541 0320 0000 4422, Exp. 12/25  </ion-label>
+  </ion-item>
+
+</ion-content>
