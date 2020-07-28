@@ -10,10 +10,6 @@
 </ion-header>
 
 <ion-content>
-  <!--This button should be removed once the "pay" buttons are working properly-->
-  <ion-button href="/payment-options" style="background-color:#186cb6">Payment options page</ion-button>
-
-
   <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
     <ion-segment-button value="pending">
       <ion-label>Pending</ion-label>

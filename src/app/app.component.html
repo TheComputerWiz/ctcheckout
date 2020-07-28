@@ -42,6 +42,13 @@
               </ion-label>
             </ion-item>
 
+            <ion-item *ngIf="authenticationService?.user" routerLink="/payment-options">
+              <ion-icon slot="start" name="md-copy"></ion-icon>
+              <ion-label>
+                Payment Options
+              </ion-label>
+            </ion-item>
+
             <ion-item *ngIf="authenticationService?.user" (click)="logout()">
               <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>
