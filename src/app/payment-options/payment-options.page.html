@@ -1,6 +1,10 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
     <ion-title style="padding-top:10px;">Pay
+		<!--When this icon is pressed, the card reader will attempt to connect, read and list the swiped card-->
 		<ion-icon name="add-circle-outline" style="font-size:30px; padding: 0px 20px 10px; float:right;">
 		</ion-icon>
 	</ion-title>
@@ -11,6 +15,7 @@
 <ion-content>
    <ion-item>
     <ion-label>
+	<!--the price of the amount you are about to pay should be listed here-->
       $--.--
     </ion-label>
   </ion-item>
