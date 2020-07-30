@@ -13,23 +13,24 @@
 </ion-header>
 
 <ion-content>
-   <ion-item>
-    <ion-label>
+    <ion-item>
+        <ion-label>
 	<!--the price of the amount you are about to pay should be listed here-->
       $--.--
+        <input type="number"  [(ngModel)]="amount">
     </ion-label>
   </ion-item>
   
  <ion-item-divider>
     <ion-label>Payment Options</ion-label>
   </ion-item-divider>
-<ion-item button (click)="buttonClick()" detail>
+<ion-item button (click)="pay(amount)" detail>
   <ion-label>
     Visa - 4895 2810 0000 0006, Exp. 12/25
   </ion-label>
 </ion-item> 
 
-<ion-item button (click)="buttonClick()" detail>
+<ion-item button (click)="pay(amount)" detail>
   <ion-label>
 	MasterCard - 5541 0320 0000 4422, Exp. 12/25  </ion-label>
   </ion-item>
