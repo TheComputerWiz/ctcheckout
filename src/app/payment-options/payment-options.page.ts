@@ -1,18 +1,96 @@
 import {Component, OnInit} from '@angular/core';
 import {HTTP} from '@ionic-native/http/ngx';
+import {  Platform } from '@ionic/angular';
 
 
+declare var cordova;
 @Component({
     selector: 'app-payment-options',
     templateUrl: './payment-options.page.html',
     styleUrls: ['./payment-options.page.scss'],
-})
-export class PaymentOptionsPage implements OnInit {
 
-    constructor(private http: HTTP) {
+})
+
+//
+
+export class PaymentOptionsPage implements OnInit {
+    orderId: number;
+    amount: string;
+
+    constructor(private http: HTTP, public platform: Platform) {
     }
 
     ngOnInit() {
+
+        this.platform.ready().then(() => {
+
+
+            cordova.plugins.unimag.swiper.activate();
+            cordova.plugins.unimag.swiper.enableLogs(true);
+            cordova.plugins.unimag.swiper.setReaderType('shuttle');
+
+            var connected = true;
+
+
+            setTimeout(function()
+            {
+
+                if (connected) {
+                    cordova.plugins.unimag.swiper.swipe(function successCallback () {
+                        alert('SUCCESS: Swipe started.');
+                    }, function errorCallback () {
+                        alert('ERROR: Could not start swipe.');
+                    });
+                } else alert('ERROR: Reader is not connected.');
+
+            },2000)
+
+
+            cordova.plugins.unimag.swiper.on('connected', function () {
+                connected = true;
+                alert('connected');
+            });
+
+            cordova.plugins.unimag.swiper.on('disconnected', function () {
+                connected = false;
+                alert('disconnected');
+
+            });
+
+            cordova.plugins.unimag.swiper.on('swipe_success', function (e) {
+                var data = JSON.parse(e.detail);
+                alert('cardholder name: ' + data.first_name + ' ' + data.last_name);
+                alert('card number:' + data.card_number);
+                alert('expiration:' + data.expiry_month + '/' + data.expiry_year);
+            });
+
+            cordova.plugins.unimag.swiper.on('swipe_error', function () {
+                alert('ERROR: Could not parse card data.');
+            });
+
+            cordova.plugins.unimag.swiper.on('timeout', function (e) {
+                if (connected) {
+                    alert('ERROR: Swipe timed out - ' + e.detail);
+                } else {
+                    console.log('ERROR: Connection timed out - ' + e.detail);
+                }
+            });
+
+
+
+
+
+
+        });
+
+
+
+        var urlParams = new URLSearchParams(window.location.search);
+
+        this.amount = parseFloat(urlParams.get("amount")).toFixed(2);
+        this.orderId = parseInt(urlParams.get("id"));
+        alert(this.orderId);
+
     }
 
     async pay(amount) {
